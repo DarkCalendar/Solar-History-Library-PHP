@@ -1,0 +1,22 @@
+{
+  "name": "dark-calendar/solar-history-library-php",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "HO",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "php" : ">=8.0",
+    "devnull-ir/facades": "v1"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "DarkCalendar\\SolarDate\\": "lib/"
+    }
+  }
+}

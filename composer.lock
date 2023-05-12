@@ -1,0 +1,58 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "bd244a49083c4ad8e9eaf01071bcb2b9",
+    "packages": [
+        {
+            "name": "devnull-ir/facades",
+            "version": "v1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DevNull-IR/facades.git",
+                "reference": "f597318272e125db59e6928c9d3979572e8b162b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DevNull-IR/facades/zipball/f597318272e125db59e6928c9d3979572e8b162b",
+                "reference": "f597318272e125db59e6928c9d3979572e8b162b",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Facades\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "DevNull(Ali)",
+                    "email": "alishahbazpor110@gmail.com"
+                }
+            ],
+            "description": "Laravel Facade for Pure php!",
+            "support": {
+                "issues": "https://github.com/DevNull-IR/facades/issues",
+                "source": "https://github.com/DevNull-IR/facades/tree/v1"
+            },
+            "time": "2023-04-02T13:37:37+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.0"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}
