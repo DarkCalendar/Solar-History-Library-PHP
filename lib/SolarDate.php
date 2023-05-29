@@ -2,7 +2,7 @@
 
 namespace DarkCalendar\SolarDate;
 
-use Facades\Facade;
+use DevNull\Facades\Facade;
 
 /**
  * @method static array|string date($format, string|int $timestamp = '', string|int $none = '', string $time_zone = 'Asia/Tehran', string $tr_num = 'fa')

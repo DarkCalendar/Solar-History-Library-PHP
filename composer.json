@@ -11,7 +11,7 @@
   ],
   "require": {
     "php" : ">=8.0",
-    "devnull-ir/facades": "v1"
+    "devnull-ir/facades": "v1.1"
   },
 
   "require-dev": {
