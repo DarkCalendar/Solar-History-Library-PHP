@@ -2,6 +2,22 @@
 
 use DarkCalendar\SolarDate\SolarDate;
 
+
+if (!function_exists('gregorian')) {
+    /**
+     * @param string $format
+     * @param string|int $timestamp
+     * @return array|string
+     */
+    function gregorian(string $format = '', string|int $timestamp = ''): array|string
+    {
+        if ($format == '') {
+            return explode('-', date('Y-m-d', $timestamp));
+        }
+        return date($format, $timestamp);
+    }
+}
+
 if (! function_exists('s_date')){
     /**
      * @param $format
@@ -151,5 +167,51 @@ if (! function_exists('s_t_g')){
     function s_t_g($jy, $jm, $jd, string $mod = ''): array|string
     {
         return SolarDate::solar_to_gregorian($jy, $jm, $jd, $mod);
+    }
+}
+
+if (!function_exists('solar')) {
+    /**
+     * @param string $format
+     * @param string|int $timestamp
+     * @param string|int $none
+     * @param string $time_zone
+     * @param string $tr_num
+     * @return array|string
+     */
+    function solar(string $format = '', string|int $timestamp = '', string|int $none = '', string $time_zone = 'Asia/Tehran', string $tr_num = 'en'): array|string
+    {
+        if ($format == '') {
+            return explode('-', SolarDate::date('Y-m-d', $timestamp, $none, $time_zone, $tr_num));
+        }
+        return SolarDate::date($format, $timestamp, $none, $time_zone, $tr_num);
+    }
+}
+
+if (!function_exists('solar_to_gregorian')) {
+    /**
+     * @param $sy
+     * @param $sm
+     * @param $sd
+     * @param string $mod
+     * @return array|string
+     */
+    function solar_to_gregorian($sy, $sm, $sd, string $mod = ''): array|string
+    {
+        return SolarDate::solar_to_gregorian($sy, $sm, $sd, $mod);
+    }
+}
+
+if (!function_exists('gregorian_to_solar')) {
+    /**
+     * @param $gy
+     * @param $gm
+     * @param $gd
+     * @param string $mod
+     * @return array|string
+     */
+    function gregorian_to_solar($gy, $gm, $gd, string $mod = ''): array|string
+    {
+        return SolarDate::gregorian_to_solar($gy, $gm, $gd, $mod);
     }
 }

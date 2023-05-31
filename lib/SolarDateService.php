@@ -1,6 +1,10 @@
 <?php
 
 namespace DarkCalendar\SolarDate;
+
+use DarkCalendar\LunarDate\LunarDate;
+use DarkCalendar\LunarDate\LunarDateService;
+
 /**
  * @name Hijri Shamsi,Solar(solar) Date and Time Functions
  * @Author : Reza Gholampanahi & WebSite : http://jdf.scr.ir
@@ -11,6 +15,14 @@ class SolarDateService
 {
 
     /**
+     * @return LunarDateService
+     */
+    private function LunarDate(): LunarDateService
+    {
+        return (new LunarDateService());
+    }
+
+    /**
      * @param $format
      * @param string|int $timestamp
      * @param string|int $none
@@ -18,11 +30,10 @@ class SolarDateService
      * @param string $tr_num
      * @return array|string
      */
-    function date($format, string|int $timestamp = '', string|int $none = '', string $time_zone = 'Asia/Tehran', string $tr_num = 'fa'): array|string
+    public function date($format, string|int $timestamp = '', string|int $none = '', string $time_zone = 'Asia/Tehran', string $tr_num = 'fa'): array|string
     {
 
         $T_sec = 0;
-
         if ($time_zone != 'local') date_default_timezone_set(($time_zone === '') ? 'Asia/Tehran' : $time_zone);
         $ts = $T_sec + (($timestamp === '') ? time() : $this->tr_num($timestamp));
         $date = explode('_', date('H_i_j_n_O_P_s_w_Y', $ts));
@@ -716,4 +727,15 @@ class SolarDateService
         return ($mod == '') ? array($gy, $gm, $gd) : $gy . $mod . $gm . $mod . $gd;
     }
 
+    /**
+     * @param string|int $l_y
+     * @param string|int $l_m
+     * @param string|int $l_d
+     * @param string $mod
+     * @return array|string
+     */
+    public function lunar_to_solar(string|int $l_y, string|int $l_m, string|int $l_d, string $mod = ''): array|string
+    {
+        return $this->LunarDate()->lunar_to_solar($l_y, $l_m, $l_d, $mod);
+    }
 }
