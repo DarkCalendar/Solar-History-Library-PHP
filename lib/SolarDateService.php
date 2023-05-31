@@ -1,4 +1,5 @@
 <?php
+
 namespace DarkCalendar\SolarDate;
 /**
  * @name Hijri Shamsi,Solar(solar) Date and Time Functions
@@ -6,7 +7,8 @@ namespace DarkCalendar\SolarDate;
  * @License GNU/LGPL _ Open Source & Free : [all functions]
  * @Version: 2.76 =>[ 1399/11/28 = 1442/07/04 = 2021/02/16 ]
  */
-class SolarDateService{
+class SolarDateService
+{
 
     /**
      * @param $format
@@ -65,7 +67,7 @@ class SolarDateService{
                     break;
 
                 case 'b':
-                    $out .= (int) ($j_m / 3.1) + 1;
+                    $out .= (int)($j_m / 3.1) + 1;
                     break;
 
                 case 'c':
@@ -73,7 +75,7 @@ class SolarDateService{
                     break;
 
                 case 'C':
-                    $out .= (int) (($j_y + 99) / 100);
+                    $out .= (int)(($j_y + 99) / 100);
                     break;
 
                 case 'd':
@@ -180,7 +182,7 @@ class SolarDateService{
                     break;
 
                 case 't':
-                    $out .= ($j_m != 12) ? (31 - (int) ($j_m / 6.5)) : ($kab + 29);
+                    $out .= ($j_m != 12) ? (31 - (int)($j_m / 6.5)) : ($kab + 29);
                     break;
 
                 case 'U':
@@ -202,11 +204,11 @@ class SolarDateService{
                 case 'W':
                     $avs = (($date[7] == 6) ? 0 : $date[7] + 1) - ($doy % 7);
                     if ($avs < 0) $avs += 7;
-                    $num = (int) (($doy + $avs) / 7);
+                    $num = (int)(($doy + $avs) / 7);
                     if ($avs < 4) {
                         $num++;
                     } elseif ($num < 1) {
-                        $num = ($avs == 4 or $avs == ((((($j_y % 33) % 4) - 2) == ((int) (($j_y % 33) * 0.05))) ? 5 : 4)) ? 53 : 52;
+                        $num = ($avs == 4 or $avs == ((((($j_y % 33) % 4) - 2) == ((int)(($j_y % 33) * 0.05))) ? 5 : 4)) ? 53 : 52;
                     }
                     $aks = $avs + $kab;
                     if ($aks == 7) $aks = 0;
@@ -229,7 +231,7 @@ class SolarDateService{
                     $out .= $sub;
             }
         }
-        return ($$this->tr_num != 'en') ? $this->tr_num($out, 'fa', '.') : $out;
+        return $this->tr_num($out, $tr_num, '.');
     }
 
     /**
@@ -296,7 +298,7 @@ class SolarDateService{
                 case 'U':
                     $avs = (($date[6] < 5) ? $date[6] + 2 : $date[6] - 5) - ($doy % 7);
                     if ($avs < 0) $avs += 7;
-                    $num = (int) (($doy + $avs) / 7) + 1;
+                    $num = (int)(($doy + $avs) / 7) + 1;
                     if ($avs > 3 or $avs == 1) $num--;
                     $out .= ($num < 10) ? '0' . $num : $num;
                     break;
@@ -304,11 +306,11 @@ class SolarDateService{
                 case 'V':
                     $avs = (($date[6] == 6) ? 0 : $date[6] + 1) - ($doy % 7);
                     if ($avs < 0) $avs += 7;
-                    $num = (int) (($doy + $avs) / 7);
+                    $num = (int)(($doy + $avs) / 7);
                     if ($avs < 4) {
                         $num++;
                     } elseif ($num < 1) {
-                        $num = ($avs == 4 or $avs == ((((($j_y % 33) % 4) - 2) == ((int) (($j_y % 33) * 0.05))) ? 5 : 4)) ? 53 : 52;
+                        $num = ($avs == 4 or $avs == ((((($j_y % 33) % 4) - 2) == ((int)(($j_y % 33) * 0.05))) ? 5 : 4)) ? 53 : 52;
                     }
                     $aks = $avs + $kab;
                     if ($aks == 7) $aks = 0;
@@ -318,7 +320,7 @@ class SolarDateService{
                 case 'W':
                     $avs = (($date[6] == 6) ? 0 : $date[6] + 1) - ($doy % 7);
                     if ($avs < 0) $avs += 7;
-                    $num = (int) (($doy + $avs) / 7) + 1;
+                    $num = (int)(($doy + $avs) / 7) + 1;
                     if ($avs > 3) $num--;
                     $out .= ($num < 10) ? '0' . $num : $num;
                     break;
@@ -339,7 +341,7 @@ class SolarDateService{
 
                 /* Year */
                 case 'C':
-                    $tmp = (int) ($j_y / 100);
+                    $tmp = (int)($j_y / 100);
                     $out .= ($tmp > 9) ? $tmp : '0' . $tmp;
                     break;
 
@@ -373,7 +375,7 @@ class SolarDateService{
                     break;
 
                 case 'l':
-                    $out .= ($date[0] > 9) ? $date[0] : ' ' . (int) $date[0];
+                    $out .= ($date[0] > 9) ? $date[0] : ' ' . (int)$date[0];
                     break;
 
                 case 'M':
@@ -452,7 +454,7 @@ class SolarDateService{
                     $out .= $sub;
             }
         }
-        return ($$this->tr_num != 'en') ? $this->tr_num($out, 'fa', '.') : $out;
+        return $this->tr_num($out, $tr_num, '.');
     }
 
     /**
@@ -514,8 +516,8 @@ class SolarDateService{
         $ts = ($timestamp === '') ? time() : $this->tr_num($timestamp);
         $$this->date = explode('_', $this->date('F_G_i_j_l_n_s_w_Y_z', $ts, '', $timezone, $tn));
         return array(
-            'seconds' => $this->tr_num((int) $this->tr_num($$this->date[6]), $tn),
-            'minutes' => $this->tr_num((int) $this->tr_num($$this->date[2]), $tn),
+            'seconds' => $this->tr_num((int)$this->tr_num($$this->date[6]), $tn),
+            'minutes' => $this->tr_num((int)$this->tr_num($$this->date[2]), $tn),
             'hours' => $$this->date[1],
             'mday' => $$this->date[3],
             'wday' => $$this->date[7],
@@ -538,7 +540,7 @@ class SolarDateService{
     function checkDate($jm, $jd, $jy): bool
     {
         list($jm, $jd, $jy) = explode('_', $this->tr_num($jm . '_' . $jd . '_' . $jy));
-        $l_d = ($jm == 12 and ((($jy + 12) % 33) % 4) != 1) ? 29 : (31 - (int) ($jm / 6.5));
+        $l_d = ($jm == 12 and ((($jy + 12) % 33) % 4) != 1) ? 29 : (31 - (int)($jm / 6.5));
         return !(($jm > 12 or $jd > $l_d or $jm < 1 or $jd < 1 or $jy < 1));
     }
 
@@ -562,9 +564,10 @@ class SolarDateService{
      * @return mixed
      * F
      */
-    function date_words($array, string $mod = ''): mixed {
+    function date_words($array, string $mod = ''): mixed
+    {
         foreach ($array as $type => $num) {
-            $num = (int) $this->tr_num($num);
+            $num = (int)$this->tr_num($num);
             switch ($type) {
 
                 case 'ss':
@@ -619,7 +622,7 @@ class SolarDateService{
 
                 case 'ff':
                     $key = array('بهار', 'تابستان', 'پاییز', 'زمستان');
-                    $array[$type] = $key[(int) ($num / 3.1)];
+                    $array[$type] = $key[(int)($num / 3.1)];
                     break;
 
                 case 'km':
@@ -641,13 +644,13 @@ class SolarDateService{
 
 
     /**  Gregorian & solar (Hijri_Shamsi,Solar) Date Converter Functions
-    Author: JDF.SCR.IR =>> Download Full Version :  http://jdf.scr.ir/jdf
-    License: GNU/LGPL _ Open Source & Free :: Version: 2.80 : [2020=1399]
-    ---------------------------------------------------------------------
-    355746=361590-5844 & 361590=(30*33*365)+(30*8) & 5844=(16*365)+(16/4)
-    355666=355746-79-1 & 355668=355746-79+1 &  1595=605+990 &  605=621-16
-    990=30*33 & 12053=(365*33)+(32/4) & 36524=(365*100)+(100/4)-(100/100)
-    1461=(365*4)+(4/4) & 146097=(365*400)+(400/4)-(400/100)+(400/400)  */
+     * Author: JDF.SCR.IR =>> Download Full Version :  http://jdf.scr.ir/jdf
+     * License: GNU/LGPL _ Open Source & Free :: Version: 2.80 : [2020=1399]
+     * ---------------------------------------------------------------------
+     * 355746=361590-5844 & 361590=(30*33*365)+(30*8) & 5844=(16*365)+(16/4)
+     * 355666=355746-79-1 & 355668=355746-79+1 &  1595=605+990 &  605=621-16
+     * 990=30*33 & 12053=(365*33)+(32/4) & 36524=(365*100)+(100/4)-(100/100)
+     * 1461=(365*4)+(4/4) & 146097=(365*400)+(400/4)-(400/100)+(400/400)  */
 
     /**
      * @param $gy
@@ -662,20 +665,20 @@ class SolarDateService{
         list($gy, $gm, $gd) = explode('_', $this->tr_num($gy . '_' . $gm . '_' . $gd));/* <= Extra :اين سطر ، جزء تابع اصلي نيست */
         $g_d_m = array(0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334);
         $gy2 = ($gm > 2) ? ($gy + 1) : $gy;
-        $days = 355666 + (365 * $gy) + ((int) (($gy2 + 3) / 4)) - ((int) (($gy2 + 99) / 100)) + ((int) (($gy2 + 399) / 400)) + $gd + $g_d_m[$gm - 1];
-        $jy = -1595 + (33 * ((int) ($days / 12053)));
+        $days = 355666 + (365 * $gy) + ((int)(($gy2 + 3) / 4)) - ((int)(($gy2 + 99) / 100)) + ((int)(($gy2 + 399) / 400)) + $gd + $g_d_m[$gm - 1];
+        $jy = -1595 + (33 * ((int)($days / 12053)));
         $days %= 12053;
-        $jy += 4 * ((int) ($days / 1461));
+        $jy += 4 * ((int)($days / 1461));
         $days %= 1461;
         if ($days > 365) {
-            $jy += (int) (($days - 1) / 365);
+            $jy += (int)(($days - 1) / 365);
             $days = ($days - 1) % 365;
         }
         if ($days < 186) {
-            $jm = 1 + (int) ($days / 31);
+            $jm = 1 + (int)($days / 31);
             $jd = 1 + ($days % 31);
         } else {
-            $jm = 7 + (int) (($days - 186) / 30);
+            $jm = 7 + (int)(($days - 186) / 30);
             $jd = 1 + (($days - 186) % 30);
         }
         return ($mod == '') ? array($jy, $jm, $jd) : $jy . $mod . $jm . $mod . $jd;
@@ -693,18 +696,18 @@ class SolarDateService{
     {
         list($jy, $jm, $jd) = explode('_', $this->tr_num($jy . '_' . $jm . '_' . $jd));/* <= Extra :اين سطر ، جزء تابع اصلي نيست */
         $jy += 1595;
-        $days = -355668 + (365 * $jy) + (((int) ($jy / 33)) * 8) + ((int) ((($jy % 33) + 3) / 4)) + $jd + (($jm < 7) ? ($jm - 1) * 31 : (($jm - 7) * 30) + 186);
-        $gy = 400 * ((int) ($days / 146097));
+        $days = -355668 + (365 * $jy) + (((int)($jy / 33)) * 8) + ((int)((($jy % 33) + 3) / 4)) + $jd + (($jm < 7) ? ($jm - 1) * 31 : (($jm - 7) * 30) + 186);
+        $gy = 400 * ((int)($days / 146097));
         $days %= 146097;
         if ($days > 36524) {
-            $gy += 100 * ((int) (--$days / 36524));
+            $gy += 100 * ((int)(--$days / 36524));
             $days %= 36524;
             if ($days >= 365) $days++;
         }
-        $gy += 4 * ((int) ($days / 1461));
+        $gy += 4 * ((int)($days / 1461));
         $days %= 1461;
         if ($days > 365) {
-            $gy += (int) (($days - 1) / 365);
+            $gy += (int)(($days - 1) / 365);
             $days = ($days - 1) % 365;
         }
         $gd = $days + 1;
