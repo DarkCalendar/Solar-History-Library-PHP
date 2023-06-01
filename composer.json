@@ -12,7 +12,7 @@
   "require": {
     "php": ">=8.0",
     "devnull-ir/facades": "^v1.1.1",
-    "dark-calendar/lunar-history-library-php": "dev-master"
+    "dark-calendar/lunar-history-library-php": "main"
   },
   "require-dev": {
     "phpunit/phpunit": "10.1.3"
@@ -32,7 +32,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "1.x-dev"
+      "main": "1.x-dev"
     }
   }
 }
