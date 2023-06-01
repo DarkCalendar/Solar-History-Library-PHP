@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4662c5a02aaa04d7ee701138e2b50948",
+    "content-hash": "a104ccddb776c4a7fa976c74d0ccdfe9",
     "packages": [
         {
             "name": "dark-calendar/lunar-history-library-php",
@@ -12,16 +12,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/DarkCalendar/Lunar-History-Library-PHP.git",
-                "reference": "311099a27f8672ad675422e5942ef1e711a9d339"
+                "reference": "4d411816cb6fcb3b33e650c2195068c05fcabc8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DarkCalendar/Lunar-History-Library-PHP/zipball/311099a27f8672ad675422e5942ef1e711a9d339",
-                "reference": "311099a27f8672ad675422e5942ef1e711a9d339",
+                "url": "https://api.github.com/repos/DarkCalendar/Lunar-History-Library-PHP/zipball/4d411816cb6fcb3b33e650c2195068c05fcabc8e",
+                "reference": "4d411816cb6fcb3b33e650c2195068c05fcabc8e",
                 "shasum": ""
             },
             "require": {
-                "dark-calendar/solar-history-library-php": "^v1.3",
+                "dark-calendar/solar-history-library-php": "1.*@dev",
                 "devnull-ir/facades": "v1.1.1",
                 "ext-mbstring": "*",
                 "php": ">=8.0"
@@ -33,7 +33,6 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "v1.5": "1.5.x-dev",
                     "dev-main": "1.x-dev"
                 }
             },
@@ -58,9 +57,9 @@
             "description": "Lunar date library for php",
             "support": {
                 "issues": "https://github.com/DarkCalendar/Lunar-History-Library-PHP/issues",
-                "source": "https://github.com/DarkCalendar/Lunar-History-Library-PHP/tree/main"
+                "source": "https://github.com/DarkCalendar/Lunar-History-Library-PHP/tree/v1.7"
             },
-            "time": "2023-05-31T13:51:20+00:00"
+            "time": "2023-06-01T10:12:05+00:00"
         },
         {
             "name": "devnull-ir/facades",
