@@ -1,4 +1,4 @@
 git add .
-set arg1=%1
-git commit -m "%arg1%"
+set commitDesk=%1
+git commit -m "%commitDesk%"
 git push
