@@ -3,7 +3,11 @@
 Solar date library for php
 
 # Installing 
+
+
 run command :
+
+
 ```bash
 composer require dark-calendar/solar-history-library-php
 ```
@@ -22,8 +26,11 @@ Or use Facade:
 **In Facades, you can access class methods statically.**
 
 # Methods
+
+
 ## date
-```phpt
+
+```php
 array|string date($format, string|int $timestamp = '', string|int $none = '', string $time_zone = 'Asia/Tehran', string $tr_num = 'fa')
 ```
 

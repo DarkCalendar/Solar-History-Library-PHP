@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/DarkCalendar/Lunar-History-Library-PHP.git",
-                "reference": "4d411816cb6fcb3b33e650c2195068c05fcabc8e"
+                "reference": "b3129be2120aee4e3d8ab5d54fb0601ff63abc22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/DarkCalendar/Lunar-History-Library-PHP/zipball/4d411816cb6fcb3b33e650c2195068c05fcabc8e",
-                "reference": "4d411816cb6fcb3b33e650c2195068c05fcabc8e",
+                "url": "https://api.github.com/repos/DarkCalendar/Lunar-History-Library-PHP/zipball/b3129be2120aee4e3d8ab5d54fb0601ff63abc22",
+                "reference": "b3129be2120aee4e3d8ab5d54fb0601ff63abc22",
                 "shasum": ""
             },
             "require": {
@@ -57,9 +57,9 @@
             "description": "Lunar date library for php",
             "support": {
                 "issues": "https://github.com/DarkCalendar/Lunar-History-Library-PHP/issues",
-                "source": "https://github.com/DarkCalendar/Lunar-History-Library-PHP/tree/v1.7"
+                "source": "https://github.com/DarkCalendar/Lunar-History-Library-PHP/tree/v1.8"
             },
-            "time": "2023-06-01T10:12:05+00:00"
+            "time": "2023-06-01T10:15:06+00:00"
         },
         {
             "name": "devnull-ir/facades",
