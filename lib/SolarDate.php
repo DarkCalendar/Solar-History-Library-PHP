@@ -2,7 +2,7 @@
 
 namespace DarkCalendar\SolarDate;
 
-use DevNull\Facades\Facade;
+use \Illuminate\Support\Facades\Facade;
 
 /**
  * @method static array|string date($format, string|int $timestamp = '', string|int $none = '', string $time_zone = 'Asia/Tehran', string $tr_num = 'fa')
@@ -17,7 +17,7 @@ use DevNull\Facades\Facade;
  */
 class SolarDate extends Facade
 {
-    public static function setNameSpace(): string
+    public static function getFacadeAccessor(): string
     {
         return SolarDateService::class;
     }
